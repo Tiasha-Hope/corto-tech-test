@@ -15,6 +15,3 @@ In the task-2 folder,
    `pip install -r requirements.txt`
 3. Run tests
    `pytest`
-
-
-
