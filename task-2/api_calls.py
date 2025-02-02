@@ -9,12 +9,21 @@ def add_a_pet(pet):
     response = requests.post(base_url, json = dpet, headers = headers)
     return response
 
+def add_a_pet_with_payload(payload):
+    headers = { 'Content-Type': 'application/json' }
+    response = requests.post(base_url, payload, headers = headers)
+    return response
+
 def update_pet(pet):
     dpet = asdict(pet)
     headers = {'Content-Type': 'application/json' }
     response = requests.put(base_url, json = dpet, headers = headers)
     return response
 
+def update_pet_with_payload(payload):
+    headers = {'Content-Type': 'application/json' }
+    response = requests.put(base_url, payload, headers = headers)
+    return response
 
 def get_pet_with_id(petid):
     response = requests.get(f"{base_url}/{petid}")
