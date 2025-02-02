@@ -17,7 +17,7 @@ def test_delete_pet_with_success():
         getpet = get_pet_with_id(pet_temp.id)
         assert getpet.status_code == 404, f"Expected status code 404, but received {getpet.status_code}"
 
-def test_delete_pet_with_id_not_found():
+def test_delete_pet_with_non_existent_id():
         #arrange
         pet_id = random.randrange(0, sys.maxsize)
         #Deleting twice in case ID exists already

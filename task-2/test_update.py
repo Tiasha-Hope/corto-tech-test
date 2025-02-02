@@ -58,7 +58,7 @@ def test_update_non_existent_pet():
         #assert
         assert response == 404, f"Expected status code 404, but received {response.status_code}"
 
-def test_put_pet_with_no_data():
+def test_update_pet_with_no_data():
      #arrange
      payloads = [None, ""]
      responses = []
@@ -69,7 +69,7 @@ def test_put_pet_with_no_data():
      for response in responses:
            assert response.status_code == 405, f"Expected status code 405, but received {response.status_code}"
 
-def test_put_pet_with_string():
+def test_update_pet_with_string():
       #arrange
       payload = "Not a pet"
       #act
