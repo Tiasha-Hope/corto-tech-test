@@ -11,7 +11,9 @@ Google Sheets version found here https://docs.google.com/spreadsheets/d/1eA-A7sB
 In the task-2 folder,
 1. Create a virtual environment
    `py -m venv venv`
-2. Install dependencies
+2. Activate the environment 
+   `venv\Scripts\activate`
+3. Install dependencies
    `pip install -r requirements.txt`
-3. Run tests
+4. Run tests
    `pytest`
