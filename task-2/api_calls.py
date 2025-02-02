@@ -25,9 +25,10 @@ def delete_pet(petid):
     response = requests.delete(f"{base_url}/{petid}", headers = headers)
     return response
 
-def get_pets_with_status(status):
-    querystr = f"/findByStatus?status={status}"
-    response = requests.get(f"{base_url}{querystr}")
+def get_pets_with_status(*statuses):
+    status = "status=" + ",".join(statuses)
+    url = f"{base_url}/findByStatus?{status}"
+    response = requests.get(url)
     return response
 
 def upload_image(petid, metadata, filepath):
