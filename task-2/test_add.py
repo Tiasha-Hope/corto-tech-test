@@ -3,7 +3,7 @@ import random
 from api_calls import get_pet_with_id, add_a_pet, add_a_pet_with_payload
 import sys
 
-def test_post_a_pet_with_success():
+def test_add_pet_saves_data():
         #arrange
         pet_temp = Pet()
         pet_temp.id = random.randrange(0, sys.maxsize)
@@ -35,7 +35,7 @@ def test_post_a_pet_with_success():
         assert result['tags'][0]['id'] == pet_temp.tags[0].id, f"pet_temp tage id {data_error}"
         assert result['tags'][0]['name'] == pet_temp.tags[0].name, f"pet_temp tag name {data_error}"
 
-def test_post_pet_no_data_405():
+def test_add_pet_with_no_data():
      #arrange
      payloads = [None, ""]
      responses = []
@@ -46,7 +46,7 @@ def test_post_pet_no_data_405():
      for response in responses:
            assert response.status_code == 405, f"Expected status code 405, but received {response.status_code}"
 
-def test_post_pet_string_400():
+def test_add_pet_with_string():
       #arrange
       payload = "Not a pet"
       #act

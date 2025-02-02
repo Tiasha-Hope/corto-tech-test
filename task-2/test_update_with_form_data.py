@@ -4,7 +4,7 @@ from api_calls import get_pet_with_id, add_a_pet, update_pet_with_form
 import sys
 
 
-def test_post_pet_with_form_data():
+def test_update_pet_with_form_data():
         #arrange
         pet_temp = Pet()
         pet_temp.id = random.randrange(0, sys.maxsize)

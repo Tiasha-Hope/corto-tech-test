@@ -16,7 +16,7 @@ def test_get_pet_with_id():
         result = getpet.json()
         assert result['name'] == "PetGet", f"Expected name PetGet, but received {result['name']}"
 
-def test_get_pet_with_id_404():
+def test_get_pet_with_non_existent_id():
         #arrange
         pet_id = random.randrange(0, sys.maxsize)
         delete_pet(pet_id)
