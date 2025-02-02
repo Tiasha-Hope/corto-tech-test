@@ -4,7 +4,7 @@ from api_calls import add_a_pet, upload_image
 from pet import Pet
 
 
-def test_post_image_with_success():
+def test_upload_image_with_success():
         #arrange
         pet_temp = Pet()
         pet_temp.id = random.randrange(0, sys.maxsize)
