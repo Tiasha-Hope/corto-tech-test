@@ -2,7 +2,9 @@
 
 ## Task 1
 PDF version found in task-1 folder 
+
 Google Sheets version found here https://docs.google.com/spreadsheets/d/1eA-A7sBLSO8t5pkb0E_xuKWxdLXu7qByUe4oTN_absw/edit?usp=sharing
+
 *Note: Integration tests included in this plan are not exhaustive as there is no access to the API
 
 ## Task 2
