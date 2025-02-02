@@ -10,7 +10,7 @@ def test_get_pets_with_statuses():
         #assert
              assert response.status_code == 200, f"Expected status code 200, but received {response.status_code}"
              result = response.json()
-             assert len(result) > 0, f"Expected at least 1 result, but received {len(result)}"
+             assert len(result) > 0, f"Expected at least 1 result, but received none"
              for pet in result:
                   assert pet['status'] == status, f"Expected status to match for each pet."
 
