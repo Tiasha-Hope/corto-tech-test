@@ -11,11 +11,12 @@ def test_put_a_pet_with_success():
         #act
         response = update_pet(pet_temp)
         #assert
-        assert response.status_code == 200
+        assert response.status_code == 200, f"Expected status code 200, but received {response.status_code}"
         getpet = get_pet_with_id(pet_temp.id)
         result = getpet.json()
-        assert result['name'] == "PetUpdate"
+        assert result['name'] == "PetUpdate", f"Expected name PetUpdate, but received {result['name']}"
 
+#Expected this to pass but it doesn't, bug?
 def test_put_a_pet_404():
         #arrange
         pet_temp = Pet()
@@ -24,7 +25,7 @@ def test_put_a_pet_404():
         #act
         response = update_pet(pet_temp)
         #assert
-        assert response == 404
+        assert response == 404, f"Expected status code 404, but received {response.status_code}"
 
 def test_put_pet_no_data_405():
      #arrange
@@ -35,7 +36,7 @@ def test_put_pet_no_data_405():
            responses.append(update_pet_with_payload(payload))
      #assert
      for response in responses:
-           assert response.status_code == 405
+           assert response.status_code == 405, f"Expected status code 405, but received {response.status_code}"
 
 def test_put_pet_string_400():
       #arrange
@@ -43,6 +44,6 @@ def test_put_pet_string_400():
       #act
       response = update_pet_with_payload(payload)
       #assert
-      response.status_code == 400
+      assert response.status_code == 400, f"Expected status code 400, but received {response.status_code}"
 
 

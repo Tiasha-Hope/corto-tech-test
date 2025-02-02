@@ -13,9 +13,9 @@ def test_delete_pet_with_success():
         #act
         response = delete_pet(pet_temp.id)
         #assert
-        assert response.status_code == 200
+        assert response.status_code == 200, f"Expected status code 200, but received {response.status_code}"
         getpet = get_pet_with_id(pet_temp.id)
-        assert getpet.status_code == 404
+        assert getpet.status_code == 404, f"Expected status code 404, but received {getpet.status_code}"
 
 def test_delete_pet_with_id_404():
         #arrange
@@ -25,4 +25,4 @@ def test_delete_pet_with_id_404():
         #act
         response = delete_pet(pet_id)
         #assert
-        assert response.status_code == 404
+        assert response.status_code == 404, f"Expected status code 404, but received {response.status_code}"

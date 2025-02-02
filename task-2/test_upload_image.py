@@ -13,4 +13,4 @@ def test_post_image_with_success():
         #act
         response = upload_image(pet_temp.id, "rabbit", "BunesPic.jpg")
         #assert
-        assert response.status_code == 200
+        assert response.status_code == 200, f"Expected status code 200, but received {response.status_code}"

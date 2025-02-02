@@ -13,9 +13,9 @@ def test_post_pet_with_form_data():
         #act
         response = update_pet_with_form(pet_temp.id, "NewName", "sold")
         #assert
-        assert response.status_code == 200
+        assert response.status_code == 200, f"Expected status code 200, but received {response.status_code}"
         getupdate = get_pet_with_id(pet_temp.id)
         result = getupdate.json()
-        assert result['name'] == "NewName"
-        assert result['status'] == "sold"
+        assert result['name'] == "NewName", f"Expected name NewName, but received {result['name']}"
+        assert result['status'] == "sold", f"Expected status sold, but received {result['status']}"
 

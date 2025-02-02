@@ -12,9 +12,9 @@ def test_get_pet_with_id():
         #act
         getpet = get_pet_with_id(pet_temp.id)
         #assert
-        assert getpet.status_code == 200
+        assert getpet.status_code == 200, f"Expected status code 200, but received {getpet.status_code}"
         result = getpet.json()
-        assert result['name'] == "PetGet"
+        assert result['name'] == "PetGet", f"Expected name PetGet, but received {result['name']}"
 
 def test_get_pet_with_id_404():
         #arrange
@@ -23,7 +23,7 @@ def test_get_pet_with_id_404():
         #act
         response = get_pet_with_id(pet_id)
         #assert
-        assert response.status_code == 404
+        assert response.status_code == 404, f"Expected status code 404, but received {response.status_code}"
 
         
         
