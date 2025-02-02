@@ -17,3 +17,5 @@ In the task-2 folder,
    `pip install -r requirements.txt`
 4. Run tests
    `pytest`
+
+*Note: Some of the tests fail as the actual behaviour doesn't match the swagger documentation
